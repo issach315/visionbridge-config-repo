@@ -1,4 +1,4 @@
-# Global configuration
+# Global configuration for all services
 spring:
   jpa:
     show-sql: true
@@ -7,12 +7,10 @@ spring:
   
 logging:
   level:
-    org.springframework.cloud: INFO
     com.visionbridge: DEBUG
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
