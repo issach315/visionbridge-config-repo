@@ -6,15 +6,11 @@ spring:
           uri: lb://employee-service
           predicates:
             - Path=/api/employees/**
-          filters:
-            - RewritePath=/api/employees/(?<segment>.*), /api/employees/$\{segment}
         
         - id: requirement-service
           uri: lb://requirements-service
           predicates:
             - Path=/api/requirements/**
-          filters:
-            - RewritePath=/api/requirements/(?<segment>.*), /api/requirements/$\{segment}
 
 server:
   port: 8080
