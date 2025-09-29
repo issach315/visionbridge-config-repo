@@ -1,0 +1,18 @@
+# Global configuration
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  
+logging:
+  level:
+    org.springframework.cloud: INFO
+    com.visionbridge: DEBUG
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
