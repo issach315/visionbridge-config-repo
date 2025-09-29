@@ -1,7 +1,4 @@
-
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       routes:
@@ -23,11 +20,6 @@ server:
   port: 8080
 
 eureka:
-  instance:
-    hostname: localhost
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,refresh
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
